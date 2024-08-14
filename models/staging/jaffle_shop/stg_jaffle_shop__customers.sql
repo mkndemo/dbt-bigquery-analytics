@@ -12,10 +12,12 @@ renamed as (
         ID as customer_id,
         first_name,
         last_name,
-        first_name || '.' || last_name || '@' || CASE 
+        -- just for demo dummy email!
+        first_name || '.' || last_name || '@' || 
+        CASE 
             WHEN rand() < 0.5 THEN 'gmail.com'
             ELSE 'hotmail.com'
-        END AS email --generate some random email for testing
+        END AS email
     from source
 
 )

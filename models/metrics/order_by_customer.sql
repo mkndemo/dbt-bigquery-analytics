@@ -1,6 +1,2 @@
-select 
-    count(*) as total, 
-    customer_id,
-    number_of_orders from {{ ref('fct_customer_orders') }}
-group by customer_id,number_of_orders
-having number_of_orders > 1
+select * from {{ ref('dim_customers_in_campaign') }}
+where match_count > 1

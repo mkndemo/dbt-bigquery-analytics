@@ -33,7 +33,7 @@ models:
     marts:
       +materialized: table
       schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
-      database: "{% if target.name == 'prod' %} silver-433308 {% else %} practical-link-432506-b0{% endif %}"
+      database: "{% if target.name == 'prod' %} silver-433308 {% else %} practical-link-432506-b0 {% endif %}"
     metrics:
       +materialized: table
       schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"

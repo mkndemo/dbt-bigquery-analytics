@@ -40,3 +40,4 @@ models:
       schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
       database: "{{ env_var('DBT_TRGT_DB_METRICS') }}"
       #database: "{% if target.name == 'prod' %} gold-433308 {% else %} practical-link-432506-b0 {% endif %}"
+      

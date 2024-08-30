@@ -27,7 +27,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   bigquery_analytics:
     staging:
-      +materialized: view
+      +materialized: table
       schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
       database: practical-link-432506-b0
     marts:

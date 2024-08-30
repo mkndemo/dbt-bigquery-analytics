@@ -18,6 +18,7 @@ models:
               values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
 
   - name: stg_jaffle_shop__customers
+    description: "This is a first staging cleanup for customers, this may contain pii data too like emails"
     meta:
       owner: "@alice"
       model_maturity: in bronze

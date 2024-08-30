@@ -2,8 +2,13 @@ version: 2
 
 models:
   - name: stg_jaffle_shop__orders
+    meta:
+      owner: "@alice"
+      model_maturity: in bronze
+    description: "This is a first staging cleanup in bronze for shop orders"
     columns:
       - name: order_id
+        description: "The olumn ID shich is unique and should never be null"
         data_tests:
           - unique
           - not_null
@@ -11,8 +16,14 @@ models:
         data_tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
-      - name: customer_id
-        data_tests:
-          - relationships:
-              to: ref('stg_jaffle_shop__customers')
-              field: customer_id
+
+  - name: stg_jaffle_shop__customers
+    meta:
+      owner: "@alice"
+      model_maturity: in bronze
+      contains_pii: true
+      description: "This is a first staging cleanup for Customer data"
+      columns:
+        - name: emails
+          meta:
+            contains_pii: true

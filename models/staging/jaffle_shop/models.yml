@@ -8,11 +8,12 @@ models:
     description: "This is a first staging cleanup in bronze for shop orders"
     columns:
       - name: order_id
-        description: "The olumn ID shich is unique and should never be null"
+        description: "The primary key for orders"
         data_tests:
           - unique
           - not_null
       - name: status
+        description: "Status of the order"
         data_tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
@@ -23,8 +24,8 @@ models:
       owner: "@alice"
       model_maturity: in bronze
       contains_pii: true
-      description: "This is a first staging cleanup for Customer data"
-      columns:
-        - name: emails
-          meta:
-            contains_pii: true
+    columns:
+      - name: emails
+        description: "The email of this customer"
+        meta:
+          contains_pii: true

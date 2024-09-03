@@ -1,5 +1,5 @@
 models: 
   - name: fct_customer_order.sql
-    group: coregcp
+    group: bigquery_analytics
     access: public
     description: "fct_customer_order"

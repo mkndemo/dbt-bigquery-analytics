@@ -1,5 +1,5 @@
 models: 
-  - name: fct_customer_order.sql
+  - name: fct_customer_order
     group: bigquery_analytics
     access: public
     description: "fct_customer_order"

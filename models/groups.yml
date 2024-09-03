@@ -1,0 +1,5 @@
+groups: 
+  - name: bigquery_analytics
+    owner:
+        name: Ben Jaffleck 
+        email: ben.jaffleck@jaffleshop.com

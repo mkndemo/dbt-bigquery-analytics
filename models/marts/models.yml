@@ -1,0 +1,5 @@
+models: 
+  - name: fct_customer_order.sql
+    group: coregcp
+    access: public
+    description: "fct_customer_order"

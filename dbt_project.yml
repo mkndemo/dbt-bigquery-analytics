@@ -1,4 +1,3 @@
-
 name: 'bigquery_analytics'
 version: '1.0.0'
 config-version: 2
@@ -20,4 +19,21 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   bigquery_analytics:
     staging:
+    +persist_docs:
+      relation: true
+      columns: true
+    staging:
       +materialized: table
+      schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
+      database: practical-link-432506-b0
+    marts:
+      +materialized: table
+      schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
+      database: "{{ env_var('DBT_TRGT_DB_MARTS') }}"
+      #database: "{% if target.name == 'prod' %} silver-433308 {% else %} practical-link-432506-b0 {% endif %}"
+    metrics:
+      +materialized: table
+      schema: "{{ env_var('DBT_TRGT_SCHEMA') }}"
+      database: "{{ env_var('DBT_TRGT_DB_METRICS') }}"
+      #database: "{% if target.name == 'prod' %} gold-433308 {% else %} practical-link-432506-b0 {% endif %}"
+      

@@ -30,11 +30,11 @@ joined_data as (
 )
 
 select
-    email,
+    email as customer_email,
     count(*) as match_count
 from
     joined_data
 group by
     email
 order by
-    match_count desc
+    match_count asc

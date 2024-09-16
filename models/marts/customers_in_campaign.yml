@@ -1,0 +1,9 @@
+# models/marts/customers_in_campaign.yml
+version: 2
+
+models:
+  - name: customers_in_campaign
+    columns:
+      - name: email
+        tests:
+          - unique

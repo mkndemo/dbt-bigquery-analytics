@@ -1,5 +1,15 @@
 models: 
-  - name: fct_customer_order
+  - name: fct_customer_orders
     group: bigquery_analytics
     access: public
-    description: "fct_customer_order"
+    description: "fct_customer_orders"
+    columns:
+      - name: customer_id
+        description: "The primary key for customer id for the orders"
+        data_type: integer
+        constraints:
+          - type: not_null
+          - type: primary_key
+        data_tests:
+          - unique
+          - not_null

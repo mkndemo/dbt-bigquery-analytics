@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized=''
+    )
+}}
+
 with 
 
 source as (

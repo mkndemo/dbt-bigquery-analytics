@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized=''
+    )
+}}
+
 with 
 
 source as (
@@ -9,8 +15,9 @@ source as (
 renamed as (
 
     select 
-        ID as customer_id,
-        first_name,
+        ID as customer_id, 
+
+        first_name as name,
         last_name,
         -- just for demo dummy email!
         first_name || '.' || last_name || '@' || 
